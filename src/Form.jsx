@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
 import { useState } from 'react';
 
-const Form = () => {
+const Form = ({ addColor }) => {
    const [color, setColor] = useState('');
    const handleSubmit = (e) => {
-
+       e.preventDefault();
+       addColor(color);
    };
 
-       return (
+   return (
     <div className='container'>
      <h4>Color generator</h4>
      <form className="color-form" onSubmit={handleSubmit}>
